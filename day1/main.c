@@ -45,7 +45,13 @@ int main(){
 
 	int sum = 0;
 	for (int k = 0; k < firstSize; k++){
-		sum += abs(secondArray[k] - firstArray[k]);
+		int sameNums = 0;
+		for(int j = 0; j < secondSize; j++){
+			if(firstArray[k] == secondArray[j]){
+				sameNums++;
+			}
+		}
+		sum += sameNums * firstArray[k];
 	}
 	printf("Sum: %d\n", sum);
 
